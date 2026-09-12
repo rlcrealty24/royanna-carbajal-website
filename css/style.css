@@ -200,6 +200,21 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.01em
 .cta-link:hover { background: var(--ivory); color: var(--onyx); border-color: var(--ivory); }
 .cta-link-gold { background: var(--gold); border-color: var(--gold); color: var(--ivory); }
 .cta-link-gold:hover { background: transparent; color: var(--gold-light); border-color: var(--gold-light); }
+.cta-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  padding: 0.6rem 0 0.2rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--ivory);
+}
+.ig-icon { width: 18px; height: 18px; color: var(--gold-light); flex-shrink: 0; }
+.cta-social a { color: var(--ivory); border-bottom: 1px solid rgba(247,243,236,0.4); }
+.cta-social a:hover { color: var(--gold-light); border-color: var(--gold-light); }
+.cta-social-divider { color: rgba(247,243,236,0.4); }
 
 /* Stats */
 .stats { background: var(--onyx); color: var(--ivory); }
@@ -376,13 +391,15 @@ section { padding: 4.5rem 2rem; }
 .contact-inner { max-width: 700px; margin: 0 auto; }
 .contact h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 1.1rem; color: var(--ivory); }
 .contact-copy { color: rgba(247,243,236,0.8); margin-bottom: 2.4rem; }
-.contact-social { margin-top: 2.2rem; display: flex; gap: 1.6rem; justify-content: center; flex-wrap: wrap; }
-.contact-social a { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); border-bottom: 1px solid var(--gold-light); }
+.contact-social { margin-top: 2.2rem; display: flex; align-items: center; gap: 0.7rem; justify-content: center; flex-wrap: wrap; }
+.contact-social a { font-size: 0.82rem; letter-spacing: 0.06em; color: var(--gold-light); border-bottom: 1px solid var(--gold-light); }
+.contact-social .ig-icon { color: var(--gold-light); }
 
 /* Footer */
 .site-footer { background: var(--ivory-dim); padding: 3.5rem 2rem 2.5rem; }
 .footer-inner { max-width: 1140px; margin: 0 auto; text-align: center; }
 .footer-brand { margin-bottom: 1.6rem; display: flex; flex-direction: column; align-items: center; }
+.footer-logo { width: 84px; height: 84px; margin-bottom: 0.9rem; }
 .footer-tagline { font-family: var(--serif); font-style: italic; font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem; }
 .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.6rem; margin-bottom: 1.8rem; }
 .footer-nav a { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--onyx); }
