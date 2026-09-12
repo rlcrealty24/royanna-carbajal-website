@@ -244,6 +244,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.01em
 }
 .stat:first-child { border-left: none; }
 .stat-num { display: block; font-family: var(--serif); font-size: 2.8rem; color: var(--gold-light); margin-bottom: 0.5rem; }
+.stat-num-small { font-size: 1.7rem; }
+.dot-sep { font-size: 1.3rem; font-weight: 700; color: var(--gold-light); vertical-align: -1px; }
 .stat-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(247,243,236,0.8); }
 
 /* Section shared */
