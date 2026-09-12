@@ -41,7 +41,7 @@ button.cta-link { width: 100%; }
   font-family: var(--sans);
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   color: var(--gold);
   margin-bottom: 1rem;
   font-weight: 500;
@@ -220,7 +220,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.01em
 /* Section shared */
 section { padding: 4.5rem 2rem; }
 .section-head { max-width: 1100px; margin: 0 auto 3.5rem; text-align: center; }
-.section-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
+.section-head h2 { font-size: clamp(2.05rem, 3.6vw, 2.75rem); }
 .section-head.light .eyebrow { color: var(--gold-light); }
 .section-head.light h2 { color: var(--ivory); }
 
