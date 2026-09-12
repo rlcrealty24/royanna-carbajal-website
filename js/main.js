@@ -21,6 +21,7 @@ const PORTAL_SUBMIT_URL = 'https://portal.rlcrealtyco.com/api/forms/submit';
 const FORM_IDS = {
   'buyer-seller': 'REPLACE_WITH_BUYER_SELLER_FORM_ID',
   'rental': 'REPLACE_WITH_RENTAL_FORM_ID',
+  'join-team': 'REPLACE_WITH_JOIN_TEAM_FORM_ID',
 };
 const BOOKING_URL = 'https://portal.rlcrealtyco.com/booking/REPLACE_WITH_BOOKING_SLUG';
 

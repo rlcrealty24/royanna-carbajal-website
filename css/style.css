@@ -164,6 +164,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.01em
 .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 .btn-outline-light { border-color: rgba(247,243,236,0.5); color: var(--ivory); }
 .btn-outline-light:hover { border-color: var(--gold-light); color: var(--gold-light); }
+.btn-outline-dark { border-color: rgba(11,11,10,0.35); color: var(--onyx); }
+.btn-outline-dark:hover { border-color: var(--gold); color: var(--gold); }
 
 .text-link {
   font-size: 0.85rem;
@@ -358,6 +360,12 @@ section { padding: 4.5rem 2rem; }
 .quote-mark { font-family: var(--serif); font-size: 2.4rem; color: var(--gold-light); line-height: 1; display: block; margin-bottom: 0.8rem; }
 .testimonial-card p { font-size: 0.95rem; margin-bottom: 1.4rem; color: rgba(247,243,236,0.85); }
 .testimonial-name { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-light); }
+
+/* Join the Team */
+.join-team { background: var(--ivory); text-align: center; }
+.join-team-inner { max-width: 640px; margin: 0 auto; }
+.join-team-inner h2 { font-size: clamp(2rem, 3.4vw, 2.6rem); margin-bottom: 1.1rem; color: var(--onyx); }
+.join-team-inner p { color: #4a453c; margin-bottom: 1.8rem; }
 
 /* Contact */
 .contact {

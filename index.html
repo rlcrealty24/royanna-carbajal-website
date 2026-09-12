@@ -195,6 +195,15 @@
   </div>
 </section>
 
+<section class="join-team" id="join-team">
+  <div class="join-team-inner">
+    <p class="eyebrow">For Agents</p>
+    <h2>Join the #RLCfam</h2>
+    <p>RLC Realty is growing across Florida and Colorado, and I'm always looking for driven, client-first agents who want a real career — not just a next closing. If you want mentorship, a boutique culture, and room to grow, let's talk.</p>
+    <button type="button" class="btn btn-outline-dark" data-open-modal="join-team">Inquire About Joining RLC</button>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="contact-inner">
     <p class="eyebrow">Let's Talk</p>
@@ -223,6 +232,7 @@
       <a href="#markets">Markets</a>
       <a href="#listings">Listings</a>
       <a href="#testimonials">Testimonials</a>
+      <a href="#join-team">Join the Team</a>
       <a href="#contact">Contact</a>
       <a href="https://royannacarbajal.com/privacypolicy" target="_blank" rel="noopener">Privacy Policy</a>
     </nav>
@@ -378,6 +388,55 @@
         <textarea id="r-message" name="message" rows="3" placeholder="Anything else I should know?"></textarea>
       </div>
       <button type="submit" class="btn btn-gold form-submit">Submit Inquiry</button>
+      <p class="form-status" role="status"></p>
+    </form>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-join-team" data-modal="join-team">
+  <div class="modal-box">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">&times;</button>
+    <p class="eyebrow">Join the #RLCfam</p>
+    <h2>Let's Talk About Your Career</h2>
+    <form class="inquiry-form" data-form-target="join-team">
+      <div class="form-row">
+        <div class="field">
+          <label for="jt-first-name">First Name</label>
+          <input type="text" id="jt-first-name" name="first_name" required>
+        </div>
+        <div class="field">
+          <label for="jt-last-name">Last Name</label>
+          <input type="text" id="jt-last-name" name="last_name" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="jt-email">Email</label>
+          <input type="email" id="jt-email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="jt-phone">Phone</label>
+          <input type="tel" id="jt-phone" name="phone" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="jt-status">Current License Status</label>
+        <select id="jt-status" name="license_status">
+          <option value="" disabled selected>Select one</option>
+          <option value="Licensed Agent">Licensed Agent</option>
+          <option value="License In Progress">License In Progress</option>
+          <option value="Considering a Career in Real Estate">Considering a Career in Real Estate</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="jt-area">Market</label>
+        <input type="text" id="jt-area" name="area_of_interest" placeholder="e.g. South Florida, Colorado">
+      </div>
+      <div class="field">
+        <label for="jt-message">What interests you about RLC Realty?</label>
+        <textarea id="jt-message" name="message" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold form-submit">Submit</button>
       <p class="form-status" role="status"></p>
     </form>
   </div>
