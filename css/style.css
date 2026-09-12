@@ -376,7 +376,7 @@ section { padding: 4.5rem 2rem; }
 .contact-inner { max-width: 700px; margin: 0 auto; }
 .contact h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 1.1rem; color: var(--ivory); }
 .contact-copy { color: rgba(247,243,236,0.8); margin-bottom: 2.4rem; }
-.contact-social { margin-top: 2.2rem; }
+.contact-social { margin-top: 2.2rem; display: flex; gap: 1.6rem; justify-content: center; flex-wrap: wrap; }
 .contact-social a { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); border-bottom: 1px solid var(--gold-light); }
 
 /* Footer */
