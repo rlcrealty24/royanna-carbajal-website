@@ -240,6 +240,13 @@ section { padding: 6.5rem 2rem; }
 }
 .about-text h2 { font-size: clamp(1.8rem, 3vw, 2.3rem); margin-bottom: 1.4rem; }
 .about-text p { margin-bottom: 1.1rem; color: #3a352c; }
+.about-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin: 1.6rem 0 1.6rem;
+}
 
 /* Markets */
 .markets { background: var(--ivory-dim); }
