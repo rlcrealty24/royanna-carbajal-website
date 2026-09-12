@@ -245,6 +245,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.01em
 .stat:first-child { border-left: none; }
 .stat-num { display: block; font-family: var(--serif); font-size: 2.8rem; color: var(--gold-light); margin-bottom: 0.5rem; }
 .stat-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(247,243,236,0.8); }
+.stat-services { display: flex; flex-direction: column; justify-content: center; gap: 0.45rem; }
+.stat-services-item { font-family: var(--serif); font-style: italic; font-size: 0.95rem; color: var(--gold-light); }
 
 /* Section shared */
 section { padding: 4.5rem 2rem; }
