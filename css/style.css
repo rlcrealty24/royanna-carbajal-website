@@ -373,6 +373,7 @@ section { padding: 4.5rem 2rem; }
   color: var(--text-muted);
   font-size: 0.85rem;
 }
+.listing-slide img { width: 100%; height: 100%; object-fit: cover; }
 .carousel-arrow {
   position: absolute;
   top: 50%;
