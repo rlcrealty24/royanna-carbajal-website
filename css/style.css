@@ -75,7 +75,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.01em
 
 .logo { display: flex; flex-direction: column; line-height: 1.15; }
 .logo-name { font-family: var(--serif); font-size: 1.15rem; letter-spacing: 0.03em; }
-.logo-sub { font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--teal); margin-top: 0.15rem; }
+.logo-signature { height: 36px; width: auto; }
+.logo-sub { font-size: 0.85rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--teal); margin-top: 0.25rem; }
 
 .main-nav { display: flex; align-items: center; gap: 2.1rem; }
 .main-nav a {
@@ -483,6 +484,7 @@ section { padding: 4.5rem 2rem; }
 .footer-inner { max-width: 1140px; margin: 0 auto; text-align: center; }
 .footer-brand { margin-bottom: 1.6rem; display: flex; flex-direction: column; align-items: center; }
 .footer-logo { width: auto; height: 110px; margin-bottom: 0.9rem; }
+.footer-signature { width: auto; height: 54px; }
 .footer-tagline { font-family: var(--serif); font-style: italic; font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem; }
 .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.6rem; margin-bottom: 1.8rem; }
 .footer-nav a { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--onyx); }
