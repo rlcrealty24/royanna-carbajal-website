@@ -456,7 +456,8 @@ section { padding: 4.5rem 2rem; }
 .testimonial-name { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-light); }
 
 /* Join the Team */
-.join-team { background: var(--ivory); text-align: center; }
+.listings { padding-bottom: 2.6rem; }
+.join-team { background: var(--ivory); text-align: center; padding: 2.6rem 2rem; }
 .join-team-inner { max-width: 640px; margin: 0 auto; }
 .join-team-logo { width: 130px; height: 130px; margin: 0 auto 1.2rem; }
 .join-team-inner h2 { font-size: clamp(2rem, 3.4vw, 2.6rem); margin-bottom: 1.1rem; color: var(--onyx); }
@@ -467,6 +468,7 @@ section { padding: 4.5rem 2rem; }
   background: var(--onyx-soft);
   color: var(--ivory);
   text-align: center;
+  padding: 3rem 2rem;
 }
 .contact-inner { max-width: 700px; margin: 0 auto; }
 .contact h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 1.1rem; color: var(--ivory); }
@@ -476,10 +478,10 @@ section { padding: 4.5rem 2rem; }
 .contact-social .ig-icon { color: var(--gold-light); }
 
 /* Footer */
-.site-footer { background: var(--ivory-dim); padding: 3.5rem 2rem 2.5rem; }
+.site-footer { background: var(--ivory-dim); padding: 2.6rem 2rem 2.2rem; }
 .footer-inner { max-width: 1140px; margin: 0 auto; text-align: center; }
 .footer-brand { margin-bottom: 1.6rem; display: flex; flex-direction: column; align-items: center; }
-.footer-logo { width: 150px; height: 150px; margin-bottom: 0.9rem; }
+.footer-logo { width: 240px; height: 240px; margin-bottom: 0.9rem; }
 .footer-tagline { font-family: var(--serif); font-style: italic; font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem; }
 .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.6rem; margin-bottom: 1.8rem; }
 .footer-nav a { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--onyx); }
