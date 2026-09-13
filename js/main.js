@@ -15,6 +15,33 @@ mainNav.querySelectorAll('a').forEach(link => {
   });
 });
 
+// ─── Listing photo carousels ────────────────────────────────────────────────
+document.querySelectorAll('[data-carousel]').forEach(track => {
+  const wrapper = track.closest('.listing-image');
+  const slides = track.querySelectorAll('.listing-slide');
+  const dotsWrap = wrapper.querySelector('[data-carousel-dots]');
+  let index = 0;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Photo ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = dotsWrap.querySelectorAll('.carousel-dot');
+
+  function goTo(i) {
+    index = (i + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, di) => d.classList.toggle('active', di === index));
+  }
+
+  wrapper.querySelector('[data-carousel-prev]').addEventListener('click', () => goTo(index - 1));
+  wrapper.querySelector('[data-carousel-next]').addEventListener('click', () => goTo(index + 1));
+});
+
 // ─── Portal / CRM integration ──────────────────────────────────────────────
 // TODO: replace these three placeholders once the portal gives you real values.
 const PORTAL_SUBMIT_URL = 'https://portal.rlcrealtyco.com/api/forms/submit';
