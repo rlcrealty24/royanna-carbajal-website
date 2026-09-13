@@ -393,6 +393,7 @@ section { padding: 4.5rem 2rem; }
 /* Join the Team */
 .join-team { background: var(--ivory); text-align: center; }
 .join-team-inner { max-width: 640px; margin: 0 auto; }
+.join-team-logo { width: 130px; height: 130px; margin: 0 auto 1.2rem; }
 .join-team-inner h2 { font-size: clamp(2rem, 3.4vw, 2.6rem); margin-bottom: 1.1rem; color: var(--onyx); }
 .join-team-inner p { color: #4a453c; margin-bottom: 1.8rem; }
 
@@ -413,7 +414,7 @@ section { padding: 4.5rem 2rem; }
 .site-footer { background: var(--ivory-dim); padding: 3.5rem 2rem 2.5rem; }
 .footer-inner { max-width: 1140px; margin: 0 auto; text-align: center; }
 .footer-brand { margin-bottom: 1.6rem; display: flex; flex-direction: column; align-items: center; }
-.footer-logo { width: 84px; height: 84px; margin-bottom: 0.9rem; }
+.footer-logo { width: 150px; height: 150px; margin-bottom: 0.9rem; }
 .footer-tagline { font-family: var(--serif); font-style: italic; font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem; }
 .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.6rem; margin-bottom: 1.8rem; }
 .footer-nav a { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--onyx); }
@@ -443,7 +444,9 @@ section { padding: 4.5rem 2rem; }
   .nav-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .nav-toggle.active span:nth-child(2) { opacity: 0; }
   .nav-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-  .about-inner { grid-template-columns: 1fr; }
+  .about { padding: 1.8rem 1.2rem 3rem; }
+  .about-inner { grid-template-columns: 1fr; gap: 1.6rem; }
+  .portrait { max-width: 420px; }
   .markets-grid { grid-template-columns: 1fr; }
   .services-strip { gap: 0.5rem 1.5rem; }
   .listings-grid { grid-template-columns: 1fr; }
@@ -531,3 +534,13 @@ section { padding: 4.5rem 2rem; }
   .form-row { grid-template-columns: 1fr; }
   .modal-box { padding: 2.2rem 1.4rem; }
 }
+
+/* Policy page */
+.policy-page { padding: 4rem 2rem 5rem; }
+.policy-inner { max-width: 760px; margin: 0 auto; }
+.policy-inner h1 { font-size: clamp(2rem, 3.6vw, 2.8rem); margin-bottom: 0.6rem; }
+.policy-updated { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 2.4rem; }
+.policy-inner h2 { font-size: 1.5rem; margin: 2.4rem 0 1rem; color: var(--onyx); }
+.policy-inner h3 { font-size: 1.05rem; margin: 1.6rem 0 0.6rem; color: var(--onyx); }
+.policy-inner p { color: #4a453c; margin-bottom: 1rem; line-height: 1.7; }
+.policy-inner .text-link { display: inline-block; margin-top: 2rem; }
