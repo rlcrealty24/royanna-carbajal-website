@@ -459,7 +459,7 @@ section { padding: 4.5rem 2rem; }
 .listings { padding-bottom: 2.6rem; }
 .join-team { background: var(--ivory); text-align: center; padding: 2.6rem 2rem; }
 .join-team-inner { max-width: 640px; margin: 0 auto; }
-.join-team-logo { width: 130px; height: 130px; margin: 0 auto 1.2rem; }
+.join-team-logo { width: auto; height: 70px; margin: 0 auto 1.2rem; }
 .join-team-inner h2 { font-size: clamp(2rem, 3.4vw, 2.6rem); margin-bottom: 1.1rem; color: var(--onyx); }
 .join-team-inner p { color: #4a453c; margin-bottom: 1.8rem; }
 
@@ -481,7 +481,7 @@ section { padding: 4.5rem 2rem; }
 .site-footer { background: var(--ivory-dim); padding: 2.6rem 2rem 2.2rem; }
 .footer-inner { max-width: 1140px; margin: 0 auto; text-align: center; }
 .footer-brand { margin-bottom: 1.6rem; display: flex; flex-direction: column; align-items: center; }
-.footer-logo { width: 240px; height: 240px; margin-bottom: 0.9rem; }
+.footer-logo { width: auto; height: 110px; margin-bottom: 0.9rem; }
 .footer-tagline { font-family: var(--serif); font-style: italic; font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem; }
 .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.6rem; margin-bottom: 1.8rem; }
 .footer-nav a { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--onyx); }
