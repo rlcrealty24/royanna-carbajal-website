@@ -349,7 +349,7 @@ section { padding: 4.5rem 2rem; }
   max-width: 1140px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -423,6 +423,18 @@ section { padding: 4.5rem 2rem; }
 }
 .listing-body h3 { font-size: 1.1rem; margin: 0.5rem 0 0.3rem; }
 .listing-body p { font-size: 0.88rem; margin-bottom: 0.8rem; }
+.listing-special {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 0.25rem 0.6rem;
+  margin-bottom: 0.6rem !important;
+}
+.listing-special-term { text-transform: none; letter-spacing: normal; color: var(--text-muted); }
+.listing-price-gross { text-decoration: line-through; color: var(--text-muted); font-weight: 400; margin-right: 0.4rem; }
 .listings-cta { text-align: center; }
 
 /* Testimonials */
