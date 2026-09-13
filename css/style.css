@@ -304,6 +304,7 @@ section { padding: 4.5rem 2rem; }
   object-fit: cover;
   z-index: 0;
 }
+.market-video-colorado { object-position: center top; }
 .market-overlay {
   position: absolute;
   inset: 0;
