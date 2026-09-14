@@ -155,7 +155,7 @@
         <span class="listing-tag">South Florida</span>
         <h3>220 NW 144th St, North Miami, FL</h3>
         <p>$669,000 &middot; 3 BD &middot; 2 BA</p>
-        <a href="mailto:carbajal1925@hotmail.com?subject=Inquiry%3A%20220%20NW%20144th%20St%2C%20North%20Miami%2C%20FL&body=Hi%20Royanna%2C%0D%0A%0D%0AI%27m%20interested%20in%20220%20NW%20144th%20St%2C%20North%20Miami%2C%20FL.%0D%0A%0D%0AName%3A%20%0D%0APhone%3A%20%0D%0AEmail%3A%20%0D%0APreferred%20date%20to%20see%20the%20property%3A%20%0D%0A%0D%0AThanks!" class="text-link">Inquire &rarr;</a>
+        <button type="button" class="btn btn-gold" data-open-modal="listing-220">Inquire About This Home</button>
       </div>
     </div>
   </div>
@@ -286,6 +286,47 @@
         <label for="bs-message">Message</label>
         <textarea id="bs-message" name="message" rows="3" placeholder="Anything else I should know?"></textarea>
       </div>
+      <button type="submit" class="btn btn-gold form-submit">Submit Inquiry</button>
+      <p class="form-status" role="status"></p>
+    </form>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-listing-220" data-modal="listing-220">
+  <div class="modal-box">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">&times;</button>
+    <p class="eyebrow">220 NW 144th St, North Miami, FL</p>
+    <h2>Inquire About This Home</h2>
+    <form class="inquiry-form" data-form-target="listing-220">
+      <div class="form-row">
+        <div class="field">
+          <label for="l220-first-name">First Name</label>
+          <input type="text" id="l220-first-name" name="first_name" required>
+        </div>
+        <div class="field">
+          <label for="l220-last-name">Last Name</label>
+          <input type="text" id="l220-last-name" name="last_name" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="l220-email">Email</label>
+          <input type="email" id="l220-email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="l220-phone">Phone</label>
+          <input type="tel" id="l220-phone" name="phone" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="l220-date">Preferred Date to See the Property</label>
+        <input type="text" id="l220-date" name="timeline" placeholder="e.g. This weekend, or a specific date">
+      </div>
+      <div class="field">
+        <label for="l220-message">Message</label>
+        <textarea id="l220-message" name="message" rows="3" placeholder="Anything else I should know?"></textarea>
+      </div>
+      <input type="hidden" name="property_address" value="220 NW 144th St, North Miami, FL">
       <button type="submit" class="btn btn-gold form-submit">Submit Inquiry</button>
       <p class="form-status" role="status"></p>
     </form>
