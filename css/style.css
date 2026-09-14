@@ -131,7 +131,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.01em
   width: 100%;
   text-align: center;
 }
-.hero .eyebrow { color: var(--teal-onblack); }
+.hero .eyebrow { color: var(--teal-onblack); margin-bottom: 0.4rem; }
 .hero h1 { font-size: clamp(2.6rem, 4.8vw, 4rem); margin-bottom: 0.6rem; color: var(--ivory); }
 .hero-sub {
   font-family: var(--serif);
