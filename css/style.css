@@ -73,7 +73,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.01em
   justify-content: space-between;
 }
 
-.logo { display: flex; flex-direction: column; line-height: 1.15; }
+.logo { display: flex; flex-direction: column; align-items: center; line-height: 1.15; }
 .logo-name { font-family: var(--serif); font-size: 1.15rem; letter-spacing: 0.03em; }
 .logo-signature { height: 36px; width: auto; }
 .logo-sub { font-size: 0.85rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--teal); margin-top: 0.25rem; }
@@ -483,7 +483,7 @@ section { padding: 4.5rem 2rem; }
 .site-footer { background: var(--ivory-dim); padding: 2.6rem 2rem 2.2rem; }
 .footer-inner { max-width: 1140px; margin: 0 auto; text-align: center; }
 .footer-brand { margin-bottom: 1.6rem; display: flex; flex-direction: column; align-items: center; }
-.footer-logo { width: auto; height: 110px; margin-bottom: 0.9rem; }
+.footer-logo { width: auto; height: 110px; margin-bottom: 0.2rem; }
 .footer-signature { width: auto; height: 54px; }
 .footer-tagline { font-family: var(--serif); font-style: italic; font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem; }
 .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.6rem; margin-bottom: 1.8rem; }
