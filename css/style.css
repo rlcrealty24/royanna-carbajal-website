@@ -31,7 +31,6 @@ button { font-family: inherit; }
 a.cta-link, button.cta-link,
 a.btn, button.btn,
 a.text-link, button.text-link {
-  background: transparent;
   cursor: pointer;
   border-width: 1px;
 }
@@ -151,6 +150,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.01em
 
 .btn {
   display: inline-block;
+  background: transparent;
   padding: 0.95rem 2rem;
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -169,6 +169,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.01em
 .btn-outline-dark:hover { border-color: var(--gold); color: var(--gold); }
 
 .text-link {
+  background: transparent;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
   color: var(--gold);
@@ -188,6 +189,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.01em
 }
 .cta-link {
   display: block;
+  background: transparent;
   text-align: center;
   padding: 1rem 1.5rem;
   font-size: 0.82rem;
