@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>A Little Halloween Treat! 🎃 | Royanna Carbajal</title>
+<meta name="description" content="Enter for a chance to win a $25 Starbucks gift card. A Halloween giveaway from Royanna Carbajal, presented by RLC Realty Co." />
+<meta name="theme-color" content="#f6efe3" />
+<meta property="og:title" content="A Little Halloween Treat! 🎃 Win a $25 Starbucks gift card" />
+<meta property="og:description" content="Something sweet for you! Free to enter. Presented by RLC Realty Co." />
+<meta property="og:image" content="https://www.royannacarbajal.com/halloween/royanna.jpg" />
+<meta property="og:url" content="https://www.royannacarbajal.com/halloween" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f6efe3;
+    --ivory: #fbf7f0;
+    --paper: #fffdf9;
+    --ink: #1d1a17;
+    --charcoal: #3a3530;
+    --muted: #7b7168;
+    --line: #e6dccb;
+    --pumpkin: #d9622b;
+    --burnt: #a8461d;
+    --gold: #c49a52;
+    --blush: #f3dcc7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  /* soft paper grain + warm glow */
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(60rem 30rem at 85% -10%, rgba(217,98,43,.13), transparent 60%),
+      radial-gradient(40rem 26rem at -10% 30%, rgba(196,154,82,.12), transparent 60%);
+  }
+  a { color: inherit; }
+  .wrap { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- Top bar ---------- */
+  .topbar { display: flex; justify-content: space-between; align-items: center; padding: 22px 0 0; gap: 12px; }
+  .wordmark { font-family: 'Playfair Display', serif; font-size: 18px; letter-spacing: .02em; text-decoration: none; }
+  .presented { font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); text-align: right; }
+  .presented b { color: var(--ink); font-weight: 500; }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; text-align: center; padding: 56px 0 36px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--burnt); font-weight: 500;
+  }
+  .eyebrow::before, .eyebrow::after { content: ""; width: 26px; height: 1px; background: var(--gold); }
+  h1 {
+    font-family: 'Playfair Display', serif; font-weight: 400; font-style: italic;
+    font-size: clamp(44px, 11vw, 104px); line-height: .98; letter-spacing: -.02em;
+    margin: 22px auto 0; max-width: 11ch;
+  }
+  h1 .pump { display: inline-block; width: .78em; height: .78em; vertical-align: -.06em; margin-left: .08em; }
+  h1 .pump svg { width: 100%; height: 100%; animation: wobble 4.5s ease-in-out infinite; transform-origin: 50% 90%; }
+  .prize {
+    margin: 26px auto 0; display: inline-block;
+    font-size: clamp(13px, 3.6vw, 16px); font-weight: 600; letter-spacing: .26em; text-transform: uppercase;
+    padding: 12px 22px; border-radius: 999px; background: var(--ink); color: var(--ivory);
+  }
+  .prize em { font-style: normal; color: #f59a63; }
+  .lede {
+    max-width: 520px; margin: 24px auto 0; font-size: 17px; color: var(--charcoal); font-weight: 300;
+  }
+
+  /* floating decorations */
+  .deco { position: absolute; pointer-events: none; color: var(--ink); opacity: .85; }
+  .deco svg { display: block; width: 100%; height: 100%; }
+  .bat1 { width: 54px; top: 34px; left: 4%; animation: flutter 7s ease-in-out infinite; }
+  .bat2 { width: 34px; top: 120px; right: 7%; animation: flutter 9s ease-in-out -2s infinite; opacity: .6; }
+  .bat3 { width: 24px; top: 250px; left: 12%; animation: flutter 8s ease-in-out -4s infinite; opacity: .45; }
+  .star { color: var(--gold); animation: twinkle 3.2s ease-in-out infinite; }
+  .s1 { width: 18px; top: 70px; right: 22%; }
+  .s2 { width: 12px; top: 210px; right: 14%; animation-delay: -1s; }
+  .s3 { width: 14px; top: 170px; left: 22%; animation-delay: -2s; }
+  .s4 { width: 10px; top: 300px; right: 30%; animation-delay: -.5s; }
+  .moon { width: 88px; top: 18px; right: -6px; color: var(--blush); opacity: 1; }
+
+  @keyframes flutter { 0%,100% { transform: translate(0,0) rotate(-4deg); } 50% { transform: translate(14px,-12px) rotate(5deg); } }
+  @keyframes twinkle { 0%,100% { transform: scale(1); opacity: .9; } 50% { transform: scale(.55); opacity: .35; } }
+  @keyframes wobble { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+
+  /* ---------- Dates ribbon ---------- */
+  .dates {
+    display: grid; grid-template-columns: repeat(3, 1fr); max-width: 640px; margin: 8px auto 0;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .dates > div { padding: 14px 8px; text-align: center; }
+  .dates > div + div { border-left: 1px solid var(--line); }
+  .dates .d { font-family: 'Playfair Display', serif; font-size: 22px; line-height: 1.1; }
+  .dates .l { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+
+  /* ---------- Card / form ---------- */
+  .card {
+    position: relative; max-width: 560px; margin: 40px auto 0;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 28px;
+    padding: 36px 28px 30px; box-shadow: 0 30px 60px -30px rgba(80,45,15,.25);
+  }
+  .card .corner { position: absolute; width: 74px; top: -36px; right: 22px; }
+  .card h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; line-height: 1.15; }
+  .card .sub { color: var(--muted); font-size: 14px; margin-top: 6px; }
+  form { margin-top: 24px; display: grid; gap: 18px; }
+  label.f { display: block; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 8px; color: var(--charcoal); }
+  label.f span { color: var(--pumpkin); }
+  input[type=text], input[type=email] {
+    width: 100%; font: inherit; font-size: 16px; color: var(--ink);
+    padding: 15px 18px; border-radius: 16px; border: 1px solid var(--line); background: var(--ivory);
+    transition: border-color .2s, box-shadow .2s, background .2s;
+  }
+  input[type=text]:focus, input[type=email]:focus { outline: none; border-color: var(--pumpkin); background: #fff; box-shadow: 0 0 0 4px rgba(217,98,43,.14); }
+  input.bad { border-color: #c0392b; }
+  .err { color: #b03a22; font-size: 13px; margin-top: 6px; display: none; }
+  .err.show { display: block; }
+
+  fieldset { border: 0; }
+  legend { font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; margin-bottom: 4px; }
+  .opt-note { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+  .chips { display: grid; gap: 10px; }
+  .chip { position: relative; }
+  .chip input { position: absolute; opacity: 0; inset: 0; }
+  .chip label {
+    display: flex; align-items: center; gap: 12px; cursor: pointer;
+    padding: 13px 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--ivory);
+    font-size: 15px; transition: all .2s;
+  }
+  .chip label .em { font-size: 18px; width: 22px; text-align: center; }
+  .chip label::after {
+    content: ""; margin-left: auto; width: 18px; height: 18px; border-radius: 50%;
+    border: 1.5px solid #cdbfa9; transition: all .2s; flex: none;
+  }
+  .chip input:checked + label { border-color: var(--ink); background: #fff; }
+  .chip input:checked + label::after { border: 5.5px solid var(--pumpkin); }
+  .chip input:focus-visible + label { box-shadow: 0 0 0 4px rgba(217,98,43,.18); }
+
+  .consent { display: flex; gap: 12px; align-items: flex-start; font-size: 13.5px; color: var(--charcoal); line-height: 1.5; cursor: pointer; }
+  .consent input { appearance: none; flex: none; width: 20px; height: 20px; margin-top: 1px; border: 1.5px solid #cdbfa9; border-radius: 6px; background: var(--ivory); cursor: pointer; display: grid; place-items: center; }
+  .consent input:checked { background: var(--ink); border-color: var(--ink); }
+  .consent input:checked::after { content: ""; width: 5px; height: 10px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-1px,-1px); }
+  .consent input:focus-visible { box-shadow: 0 0 0 4px rgba(217,98,43,.18); }
+
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  button.cta {
+    width: 100%; font: inherit; font-size: 14px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase;
+    color: #fff; background: var(--pumpkin); border: 0; border-radius: 999px; padding: 18px 20px; cursor: pointer;
+    box-shadow: 0 12px 24px -10px rgba(168,70,29,.6); transition: transform .15s, background .2s, box-shadow .2s;
+  }
+  button.cta:hover { background: var(--burnt); transform: translateY(-1px); }
+  button.cta:active { transform: translateY(1px); }
+  button.cta[disabled] { opacity: .65; cursor: wait; }
+  .fine { font-size: 12px; color: var(--muted); text-align: center; line-height: 1.55; }
+  .fine a { color: var(--ink); }
+  .form-msg { text-align: center; font-size: 14px; padding: 12px 14px; border-radius: 14px; background: var(--blush); display: none; }
+  .form-msg.show { display: block; }
+
+  /* ---------- Thank you ---------- */
+  #thanks { display: none; text-align: center; }
+  #thanks.show { display: block; animation: rise .6s ease both; }
+  #thanks h2 { font-size: clamp(34px, 9vw, 48px); font-style: italic; }
+  #thanks .msg { margin: 14px auto 0; max-width: 420px; color: var(--charcoal); }
+  .announce {
+    margin: 26px auto 0; padding: 18px; border-radius: 20px; background: var(--ink); color: var(--ivory);
+  }
+  .announce .big { font-family: 'Playfair Display', serif; font-size: 24px; }
+  .announce .small { font-size: 13px; opacity: .8; margin-top: 4px; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+  /* candy confetti */
+  .confetti { position: fixed; inset: 0; pointer-events: none; z-index: 50; overflow: hidden; }
+  .confetti i { position: absolute; top: -30px; font-style: normal; animation: fall linear forwards; }
+  @keyframes fall { to { transform: translateY(110vh) rotate(540deg); } }
+
+  /* ---------- Intro ---------- */
+  .intro { max-width: 560px; margin: 56px auto 0; }
+  .intro-head { display: flex; align-items: center; gap: 18px; }
+  .avatar { position: relative; flex: none; width: 92px; height: 92px; }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid var(--paper); box-shadow: 0 0 0 1px var(--line); background: var(--blush); }
+  .avatar .mini { position: absolute; right: -6px; bottom: -2px; width: 30px; }
+  .intro .name { font-family: 'Playfair Display', serif; font-size: 24px; line-height: 1.15; }
+  .intro .role { font-size: 13px; color: var(--charcoal); margin-top: 3px; }
+  .intro .where { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--burnt); margin-top: 4px; }
+  .intro p.hello { margin-top: 18px; color: var(--charcoal); font-weight: 300; font-size: 16px; }
+  .socials { display: grid; gap: 10px; margin-top: 18px; }
+  .ig {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+    padding: 12px 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--paper); transition: all .2s;
+  }
+  .ig:hover { border-color: var(--ink); transform: translateY(-1px); }
+  .ig svg { width: 20px; height: 20px; flex: none; }
+  .ig .h { font-weight: 500; }
+  .ig .t { font-size: 12px; color: var(--muted); margin-left: auto; }
+  .ig.primary { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
+  .ig.primary .t { color: #d9cdbb; }
+  .follow-note { font-size: 12px; color: var(--muted); margin-top: 10px; text-align: center; }
+
+  /* ---------- Rules ---------- */
+  .rules { max-width: 720px; margin: 64px auto 0; border-top: 1px solid var(--line); padding-top: 22px; }
+  .rules summary {
+    cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Playfair Display', serif; font-size: 22px;
+  }
+  .rules summary::-webkit-details-marker { display: none; }
+  .rules summary::after { content: "+"; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 28px; color: var(--pumpkin); }
+  .rules[open] summary::after { content: "–"; }
+  .rules .body { font-size: 14px; color: var(--charcoal); margin-top: 14px; }
+  .rules .body h3 { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; margin: 18px 0 4px; color: var(--ink); }
+  .rules .body p { margin-bottom: 6px; }
+
+  footer { text-align: center; padding: 48px 0 40px; font-size: 12px; color: var(--muted); }
+  footer .tag { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--charcoal); margin-bottom: 6px; }
+
+  @media (max-width: 480px) {
+    .wordmark { font-size: 16px; }
+    .eyebrow { letter-spacing: .22em; font-size: 10.5px; }
+    .eyebrow::before, .eyebrow::after { width: 14px; }
+    .prize { letter-spacing: .12em; font-size: 12.5px; padding: 12px 18px; }
+    .moon { width: 64px; top: 70px; }
+  }
+  @media (min-width: 720px) {
+    .card { padding: 44px 44px 36px; }
+    .hero { padding-top: 72px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- reusable SVG shapes -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="bat" viewBox="0 0 64 32"><path fill="currentColor" d="M32 10c1.6-3 3-4 3-4s.4 3 .2 4.6c3.2-1 7.4-4.4 9.8-8.6 1.8 3 6 5 10 4.6-.6 3.4 1 6.4 4 8.4-3.6.4-6 2.6-6.4 6-3-2.2-7.2-2.4-10.6.2C40 18 36.4 18.6 32 26c-4.4-7.4-8-8-11.6-4.8-3.4-2.6-7.6-2.4-10.6-.2-.4-3.4-2.8-5.6-6.4-6 3-2 4.6-5 4-8.4 4 .4 8.2-1.6 10-4.6 2.4 4.2 6.6 7.6 9.8 8.6-.2-1.6.2-4.6.2-4.6s1.4 1 3 4z"/></symbol>
+    <symbol id="star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.8 6.6 4.6 10.6 12 12-7.4 1.4-11.2 5.4-12 12-.8-6.6-4.6-10.6-12-12C7.4 10.6 11.2 6.6 12 0z"/></symbol>
+    <symbol id="pumpkin" viewBox="0 0 100 100">
+      <path d="M52 22c0-8 4-13 10-15" fill="none" stroke="#3b2a1a" stroke-width="5" stroke-linecap="round"/>
+      <path d="M56 16c8-6 18-4 22 2-8 4-15 3-22-2z" fill="#6f7a3a"/>
+      <ellipse cx="30" cy="60" rx="22" ry="30" fill="#c8551f"/>
+      <ellipse cx="70" cy="60" rx="22" ry="30" fill="#c8551f"/>
+      <ellipse cx="50" cy="60" rx="24" ry="33" fill="#e2702f"/>
+      <ellipse cx="40" cy="60" rx="10" ry="30" fill="#ea8040" opacity=".55"/>
+      <ellipse cx="60" cy="60" rx="10" ry="30" fill="#d5622a" opacity=".45"/>
+      <path d="M36 52l6-7 6 7zM52 52l6-7 6 7z" fill="#2b1d12" opacity=".9"/>
+      <path d="M34 66q16 12 32 0-4 3-8 3l-2 4-3-4h-6l-3 4-2-4q-4 0-8-3z" fill="#2b1d12" opacity=".9"/>
+    </symbol>
+    <symbol id="moon" viewBox="0 0 100 100"><path fill="currentColor" d="M66 8a44 44 0 1 0 26 66A38 38 0 0 1 66 8z"/></symbol>
+    <symbol id="igicon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 2.8h10A4.2 4.2 0 0 1 21.2 7v10a4.2 4.2 0 0 1-4.2 4.2H7A4.2 4.2 0 0 1 2.8 17V7A4.2 4.2 0 0 1 7 2.8z"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="topbar">
+    <a class="wordmark" href="/">Royanna Carbajal</a>
+    <div class="presented">Presented by <b>RLC&nbsp;Realty&nbsp;Co.</b></div>
+  </header>
+
+  <section class="hero" id="top">
+    <span class="deco moon" aria-hidden="true"><svg><use href="#moon"/></svg></span>
+    <span class="deco bat1" aria-hidden="true"><svg><use href="#bat"/></svg></span>
+    <span class="deco bat2" aria-hidden="true"><svg><use href="#bat"/></svg></span>
+    <span class="deco bat3" aria-hidden="true"><svg><use href="#bat"/></svg></span>
+    <span class="deco star s1" aria-hidden="true"><svg><use href="#star"/></svg></span>
+    <span class="deco star s2" aria-hidden="true"><svg><use href="#star"/></svg></span>
+    <span class="deco star s3" aria-hidden="true"><svg><use href="#star"/></svg></span>
+    <span class="deco star s4" aria-hidden="true"><svg><use href="#star"/></svg></span>
+
+    <div class="eyebrow">Halloween Giveaway · 2026</div>
+    <h1>A Little Halloween Treat!<span class="pump" role="img" aria-label="pumpkin"><svg><use href="#pumpkin"/></svg></span></h1>
+    <div class="prize">Win a <em>$25 Starbucks</em> gift card!</div>
+    <p class="lede">Something sweet for you! Enter our Halloween giveaway for a chance to win a $25 Starbucks gift card. Good luck &amp; Happy Halloween! 🤍</p>
+  </section>
+
+  <div class="dates" aria-label="Giveaway dates">
+    <div><div class="d">Oct 31</div><div class="l">Candy station</div></div>
+    <div><div class="d">Nov 1</div><div class="l">Entries close</div></div>
+    <div><div class="d">Nov 2</div><div class="l">Winner drawn</div></div>
+  </div>
+
+  <main class="card" id="entry">
+    <span class="corner" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#pumpkin"/></svg></span>
+
+    <div id="entry-form">
+      <h2>Enter the giveaway</h2>
+      <p class="sub">Takes about 20 seconds. Free to enter.</p>
+
+      <form id="form" novalidate>
+        <input type="hidden" name="source" id="source" value="direct" />
+        <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" /></label></div>
+
+        <div>
+          <label class="f" for="name">Full name <span>*</span></label>
+          <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" maxlength="120" required />
+          <div class="err" id="name-err">Please enter your name.</div>
+        </div>
+
+        <div>
+          <label class="f" for="email">Email address <span>*</span></label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" maxlength="254" required />
+          <div class="err" id="email-err">Please enter a valid email address.</div>
+        </div>
+
+        <fieldset>
+          <legend>Just curious! Any real estate plans?</legend>
+          <p class="opt-note">Optional. This doesn't affect your entry.</p>
+          <div class="chips">
+            <div class="chip"><input type="radio" name="interest" id="i1" value="halloween" checked><label for="i1"><span class="em">🍬</span>Just here for the Halloween treats!</label></div>
+            <div class="chip"><input type="radio" name="interest" id="i2" value="buying"><label for="i2"><span class="em">🏡</span>Thinking about buying a home</label></div>
+            <div class="chip"><input type="radio" name="interest" id="i3" value="selling"><label for="i3"><span class="em">🔑</span>Considering selling a home</label></div>
+            <div class="chip"><input type="radio" name="interest" id="i4" value="exploring"><label for="i4"><span class="em">✨</span>Exploring my options</label></div>
+          </div>
+        </fieldset>
+
+        <label class="consent">
+          <input type="checkbox" id="optin" name="optin" />
+          <span id="consent-text">I'd love to receive occasional real estate updates, local market insights, and helpful homebuying or selling information from RLC Realty Co.</span>
+        </label>
+
+        <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
+
+        <button type="submit" class="cta" id="submit">Enter Giveaway 🎃</button>
+        <p class="fine">No purchase necessary. Free to enter. No real estate inquiry or marketing subscription required. See <a href="#rules" id="rules-link">Official Rules</a>.</p>
+      </form>
+    </div>
+
+    <div id="thanks" role="status" aria-live="polite">
+      <h2 id="thanks-title">You're Entered! 🎃🤍</h2>
+      <p class="msg" id="thanks-msg">Thanks for entering our Halloween giveaway! You're officially in the running for a $25 Starbucks gift card. Good luck!</p>
+      <div class="announce">
+        <div class="big">Winner announced November 2!</div>
+        <div class="small">The winner will be contacted by email on November 2.</div>
+      </div>
+    </div>
+  </main>
+
+  <section class="intro" aria-label="About Royanna">
+    <div class="intro-head">
+      <div class="avatar">
+        <img src="royanna.jpg" alt="Royanna Carbajal" width="92" height="92" />
+        <span class="mini" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#pumpkin"/></svg></span>
+      </div>
+      <div>
+        <div class="name">Royanna Carbajal</div>
+        <div class="role">Broker &amp; Founder | RLC Realty Co.</div>
+        <div class="where">Serving Colorado &amp; Florida</div>
+      </div>
+    </div>
+    <p class="hello" id="hello">Hi, neighbors &amp; friends! 👋🏼 I'm Royanna, a real estate broker and founder of RLC Realty Co., serving Colorado and Florida. Whether you're here for the Halloween treats or just stopping by to say hello, I'm so glad you're here. Wishing you a happy Halloween!</p>
+    <div class="socials">
+      <a class="ig primary" href="https://www.instagram.com/royannacarbajal/" target="_blank" rel="noopener">
+        <svg><use href="#igicon"/></svg><span class="h">@royannacarbajal</span><span class="t">Personal</span>
+      </a>
+      <a class="ig" href="https://www.instagram.com/rlcrealtyco/" target="_blank" rel="noopener">
+        <svg><use href="#igicon"/></svg><span class="h">@rlcrealtyco</span><span class="t">Brokerage</span>
+      </a>
+    </div>
+    <p class="follow-note">Following is never required to enter. Just say hi!</p>
+  </section>
+
+  <details class="rules" id="rules">
+    <summary>Official Rules</summary>
+    <div class="body">
+      <p><strong>A Little Halloween Treat! Giveaway 2026.</strong> NO PURCHASE NECESSARY TO ENTER OR WIN. A purchase will not increase your chances of winning. Void where prohibited.</p>
+      <h3>Sponsor</h3>
+      <p>RLC Realty Co., 2730 SW 3rd Ave, Ste 701, Miami, FL 33129 · info@rlcrealtyco.com (“Sponsor”). Hosted by Royanna Carbajal, Broker &amp; Founder.</p>
+      <h3>Eligibility</h3>
+      <p>Open to legal residents of the 50 United States and the District of Columbia who are at least 18 years old (or the age of majority in their state of residence, if older) at the time of entry. Employees of Sponsor and their immediate family and household members are not eligible. Subject to all applicable laws.</p>
+      <h3>Entry period</h3>
+      <p>Entries open October 30, 2026 and close November 1, 2026 at 11:59 PM Mountain Time. Entries received after the deadline will not be accepted.</p>
+      <h3>How to enter</h3>
+      <p>Complete the entry form on this page with your full name and a valid email address. Limit one (1) entry per person and per email address. Duplicate entries are not counted. No real estate inquiry, social media follow, or marketing subscription is required. Answering the optional real estate question or opting in to emails does not affect your chances of winning.</p>
+      <h3>Prize</h3>
+      <p>One (1) $25 Starbucks gift card (approximate retail value: $25). One winner. No cash alternative or substitution except at Sponsor's discretion. Gift card subject to its issuer's terms.</p>
+      <h3>Winner selection &amp; notification</h3>
+      <p>One winner will be selected at random from all eligible entries on or about November 2, 2026. Odds of winning depend on the number of eligible entries received. The winner will be notified by email on November 2, 2026 and must respond within 72 hours of notification. If the winner does not respond in time, is ineligible, or the prize notification is undeliverable, the prize may be forfeited and an alternate winner selected at random from the remaining eligible entries.</p>
+      <h3>Privacy</h3>
+      <p>Information you submit is collected by RLC Realty Co. and used to administer this giveaway and contact the winner. Your answer to the optional real estate question helps us understand our community. We'll only send marketing emails if you check the separate opt-in box, and you may unsubscribe at any time. We do not sell your personal information. The winner's personal information will not be published.</p>
+      <h3>General</h3>
+      <p>By entering, participants agree to these Official Rules and Sponsor's decisions, which are final. Sponsor is not responsible for lost, late, incomplete, or misdirected entries or technical failures. Sponsor may cancel or modify the giveaway if fraud or technical problems compromise its integrity. To the extent permitted by law, participants release Sponsor from liability arising from participation or the prize. This giveaway is in no way sponsored, endorsed, administered by, or associated with Instagram, Meta, or Starbucks.</p>
+    </div>
+  </details>
+
+  <footer>
+    <div class="tag">Leadership in every deal. Loyalty in every move.</div>
+    <div>© 2026 RLC Realty Co. · Royanna Carbajal, Broker &amp; Founder</div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var SB_URL = 'https://rmpynvmsigwpyhiparqq.supabase.co';
+  var SB_KEY = 'sb_publishable_CrjMrils_yUmV8s_I0QvnA_UzBEbL7f';
+  var CAMPAIGN = 'halloween-2026';
+
+  // Tracking: capture ?source= and all original URL params (saved only on submit)
+  var params = new URLSearchParams(location.search);
+  var raw = {};
+  params.forEach(function (v, k) { if (Object.keys(raw).length < 15) raw[k.slice(0, 40)] = v.slice(0, 200); });
+  var src = (params.get('source') || params.get('utm_source') || '').toLowerCase().trim();
+  document.getElementById('source').value = src || 'direct';
+
+  var form = document.getElementById('form');
+  var nameEl = document.getElementById('name');
+  var emailEl = document.getElementById('email');
+  var btn = document.getElementById('submit');
+  var msg = document.getElementById('form-msg');
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function setErr(el, id, on) { el.classList.toggle('bad', on); document.getElementById(id).classList.toggle('show', on); }
+  function showMsg(t) { msg.textContent = t; msg.classList.add('show'); }
+
+  document.getElementById('rules-link').addEventListener('click', function () {
+    document.getElementById('rules').open = true;
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    msg.classList.remove('show');
+    var name = nameEl.value.trim().replace(/\s+/g, ' ');
+    var email = emailEl.value.trim().toLowerCase();
+    var badName = name.length < 2, badEmail = !EMAIL_RE.test(email);
+    setErr(nameEl, 'name-err', badName);
+    setErr(emailEl, 'email-err', badEmail);
+    if (badName) { nameEl.focus(); return; }
+    if (badEmail) { emailEl.focus(); return; }
+    if (document.getElementById('website').value) { done('entered'); return; } // bot honeypot
+
+    btn.disabled = true; btn.textContent = 'Entering…';
+    fetch(SB_URL + '/rest/v1/rpc/enter_campaign', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': SB_KEY },
+      body: JSON.stringify({
+        p_slug: CAMPAIGN,
+        p_name: name,
+        p_email: email,
+        p_source: document.getElementById('source').value,
+        p_params: raw,
+        p_interest: (form.querySelector('input[name=interest]:checked') || {}).value || 'halloween',
+        p_opt_in: document.getElementById('optin').checked,
+        p_consent_text: document.getElementById('consent-text').textContent
+      })
+    })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (!res.ok) throw new Error('save failed');
+        var s = res.j;
+        if (s === 'entered' || s === 'duplicate') return done(s);
+        if (s === 'closed') return reset('Entries for this giveaway are now closed. Thank you so much for stopping by! 🎃');
+        if (s === 'not_open') return reset('Entries aren\'t open just yet. Please check back soon! 🎃');
+        if (s === 'invalid') return reset('Please double-check your name and email address.');
+        throw new Error('unexpected');
+      })
+      .catch(function () { reset('Hmm, something went wrong. Please try again in a moment.'); });
+  });
+
+  function reset(t) { btn.disabled = false; btn.textContent = 'Enter Giveaway 🎃'; showMsg(t); }
+
+  function done(state) {
+    if (state === 'duplicate') {
+      document.getElementById('thanks-title').textContent = 'Looks like you\'ve already entered! 🎃';
+      document.getElementById('thanks-msg').textContent = 'You\'re all set. Good luck!';
+    }
+    document.getElementById('entry-form').style.display = 'none';
+    document.getElementById('thanks').classList.add('show');
+    document.getElementById('hello').textContent = 'Thanks for stopping by! I\'m Royanna, your neighbor & local real estate connection in Colorado and Florida! I\'d love to connect with you on Instagram!';
+    document.getElementById('entry').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (state === 'entered') confetti();
+  }
+
+  function confetti() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var box = document.createElement('div'); box.className = 'confetti';
+    var bits = ['🍬', '🎃', '🍭', '✦', '🍫', '🤍'];
+    for (var i = 0; i < 34; i++) {
+      var b = document.createElement('i');
+      b.textContent = bits[i % bits.length];
+      b.style.left = Math.random() * 100 + 'vw';
+      b.style.fontSize = (14 + Math.random() * 16) + 'px';
+      b.style.color = '#c49a52';
+      b.style.animationDuration = (2.4 + Math.random() * 2) + 's';
+      b.style.animationDelay = (Math.random() * .6) + 's';
+      box.appendChild(b);
+    }
+    document.body.appendChild(box);
+    setTimeout(function () { box.remove(); }, 5200);
+  }
+})();
+</script>
+</body>
+</html>
