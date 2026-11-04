@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You're Invited: Thanksgiving Dinner 🦃</title>
+<meta name="description" content="Join us for Thanksgiving dinner on Thursday, November 26 at 5 PM. RSVP and let us know what you're bringing!" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#f6efe3" />
+<meta property="og:title" content="You're Invited: Thanksgiving Dinner 🦃" />
+<meta property="og:description" content="Thursday, November 26 · 5 PM. RSVP and sign up for a dish!" />
+<meta property="og:url" content="https://www.royannacarbajal.com/thanksgiving" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦃</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f6efe3;
+    --paper: #fffdf9;
+    --ink: #2a1f1a;
+    --muted: #7b6b5f;
+    --line: #e8dcc8;
+    --pumpkin: #c8602a;
+    --burgundy: #7a2e2a;
+    --gold: #c49a52;
+    --sage: #6f7f5b;
+    --soft: #f9f1e4;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 28px 18px 60px; }
+
+  /* Invite card */
+  .invite {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 44px 28px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(122, 46, 42, .08);
+  }
+  .invite::before, .invite::after {
+    content: "🍂"; position: absolute; font-size: 54px; opacity: .22;
+  }
+  .invite::before { top: -6px; left: -4px; transform: rotate(-20deg); }
+  .invite::after { bottom: -8px; right: -2px; transform: rotate(160deg); }
+  .eyebrow {
+    font-size: 12px; letter-spacing: .32em; text-transform: uppercase;
+    color: var(--pumpkin); font-weight: 600;
+  }
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600; color: var(--burgundy);
+    font-size: clamp(40px, 9vw, 60px); line-height: 1.05;
+    margin: 12px 0 6px;
+  }
+  .sub {
+    font-family: 'Playfair Display', Georgia, serif; font-style: italic;
+    font-size: 19px; color: var(--muted); margin: 0 0 28px;
+  }
+  .divider { display: flex; align-items: center; gap: 12px; justify-content: center; margin: 0 auto 26px; color: var(--gold); }
+  .divider span { height: 1px; width: 70px; background: var(--gold); opacity: .6; }
+  .details { display: grid; gap: 14px; max-width: 420px; margin: 0 auto; }
+  .detail {
+    display: flex; gap: 14px; align-items: center; text-align: left;
+    background: var(--soft); border-radius: 14px; padding: 14px 18px;
+  }
+  .detail .ic { font-size: 24px; }
+  .detail .lbl { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+  .detail .val { font-weight: 500; font-size: 17px; }
+  .detail a { color: var(--burgundy); text-decoration: none; border-bottom: 1px solid rgba(122,46,42,.3); }
+  .note { margin: 26px auto 0; max-width: 440px; color: var(--muted); font-size: 15px; }
+
+  /* Form */
+  .card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 22px;
+    padding: 30px 24px; margin-top: 22px;
+  }
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif; color: var(--burgundy);
+    font-weight: 600; font-size: 28px; margin: 0 0 4px;
+  }
+  .hint { color: var(--muted); font-size: 15px; margin: 0 0 20px; }
+  label.field { display: block; font-weight: 500; font-size: 14px; margin: 18px 0 6px; }
+  input[type=text], input[type=number], textarea {
+    width: 100%; font: inherit; font-size: 16px; color: var(--ink);
+    background: #fff; border: 1px solid var(--line); border-radius: 12px;
+    padding: 12px 14px; outline: none; transition: border-color .15s, box-shadow .15s;
+  }
+  input:focus, textarea:focus { border-color: var(--pumpkin); box-shadow: 0 0 0 3px rgba(200, 96, 42, .15); }
+  input.bad { border-color: #b3261e; }
+  .err { color: #b3261e; font-size: 13px; margin-top: 4px; display: none; }
+  .err.show { display: block; }
+
+  .rsvp-opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .rsvp-opts input { position: absolute; opacity: 0; pointer-events: none; }
+  .rsvp-opts label {
+    display: block; text-align: center; cursor: pointer;
+    border: 1.5px solid var(--line); border-radius: 14px; padding: 14px 6px;
+    font-weight: 500; background: #fff; transition: all .15s; user-select: none;
+  }
+  .rsvp-opts label .e { display: block; font-size: 24px; margin-bottom: 2px; }
+  .rsvp-opts input:checked + label { border-color: var(--pumpkin); background: #fdf1e8; color: var(--burgundy); }
+  .rsvp-opts input:focus-visible + label { box-shadow: 0 0 0 3px rgba(200, 96, 42, .25); }
+
+  .guests { display: flex; align-items: center; gap: 12px; }
+  .guests button {
+    width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--line);
+    background: #fff; font-size: 22px; cursor: pointer; color: var(--burgundy);
+  }
+  .guests output { min-width: 34px; text-align: center; font-size: 20px; font-weight: 600; }
+
+  .bring { margin-top: 8px; }
+  .cat { margin-top: 18px; }
+  .cat h3 {
+    font-family: 'Playfair Display', Georgia, serif; font-weight: 600;
+    font-size: 19px; margin: 0 0 10px; color: var(--ink);
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { position: relative; }
+  .chip input { position: absolute; opacity: 0; pointer-events: none; }
+  .chip label {
+    display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+    border: 1.5px solid var(--line); background: #fff; border-radius: 999px;
+    padding: 8px 14px; font-size: 15px; transition: all .15s; user-select: none;
+  }
+  .chip label .n {
+    font-size: 11px; background: var(--soft); color: var(--muted);
+    border-radius: 999px; padding: 1px 7px; font-weight: 500;
+  }
+  .chip input:checked + label { border-color: var(--sage); background: #eef2e8; color: #3d4a30; }
+  .chip input:checked + label::before { content: "✓"; font-weight: 600; }
+  .chip input:focus-visible + label { box-shadow: 0 0 0 3px rgba(111, 127, 91, .3); }
+  .other-row { margin-top: 10px; display: none; }
+  .other-row.show { display: block; }
+
+  .hide-when-no { transition: opacity .2s; }
+  .hide-when-no.off { display: none; }
+
+  .btn {
+    display: block; width: 100%; margin-top: 26px; padding: 16px;
+    font: inherit; font-size: 17px; font-weight: 600; letter-spacing: .02em;
+    color: #fff; background: var(--burgundy); border: 0; border-radius: 14px; cursor: pointer;
+    transition: background .15s, transform .05s;
+  }
+  .btn:hover { background: #5f2220; }
+  .btn:active { transform: translateY(1px); }
+  .btn:disabled { opacity: .6; cursor: default; }
+  .form-msg { margin-top: 12px; text-align: center; color: #b3261e; display: none; }
+  .form-msg.show { display: block; }
+
+  .thanks { text-align: center; display: none; padding: 10px 0; }
+  .thanks.show { display: block; }
+  .thanks .big { font-size: 52px; }
+  .thanks p { color: var(--muted); }
+  .link-btn {
+    background: none; border: 0; color: var(--burgundy); font: inherit; font-weight: 500;
+    text-decoration: underline; cursor: pointer; padding: 6px;
+  }
+
+  /* Who's bringing what */
+  .list { margin: 0; padding: 0; list-style: none; }
+  .list li { border-top: 1px solid var(--line); padding: 12px 0; }
+  .list li:first-child { border-top: 0; }
+  .list .who { font-weight: 600; }
+  .list .meta { color: var(--muted); font-size: 14px; }
+  .list .items { font-size: 15px; margin-top: 2px; }
+  .stats { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .stat { background: var(--soft); border-radius: 12px; padding: 8px 14px; font-size: 14px; }
+  .stat b { font-size: 18px; color: var(--burgundy); margin-right: 4px; }
+  .empty { color: var(--muted); font-style: italic; }
+
+  footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 30px; }
+  .hp { position: absolute; left: -9999px; }
+
+  @media (max-width: 420px) {
+    .invite { padding: 38px 18px 30px; }
+    .card { padding: 26px 18px; }
+    .rsvp-opts label { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="invite">
+    <div class="eyebrow">You're Invited</div>
+    <h1>Thanksgiving<br>Dinner</h1>
+    <p class="sub">Good food, good company &amp; lots to be thankful for</p>
+    <div class="divider"><span></span>🦃<span></span></div>
+    <div class="details">
+      <div class="detail"><div class="ic">📅</div><div><div class="lbl">Date</div><div class="val">Thursday, November 26</div></div></div>
+      <div class="detail"><div class="ic">🕔</div><div><div class="lbl">Time</div><div class="val">5:00 PM</div></div></div>
+      <div class="detail"><div class="ic">📍</div><div><div class="lbl">Address</div>
+        <div class="val"><a href="https://www.google.com/maps/search/?api=1&query=16384+Fillmore+Street+Thornton+CO+80602" target="_blank" rel="noopener">16384 Fillmore Street<br>Thornton, CO 80602</a></div></div></div>
+    </div>
+    <p class="note">The turkey's on us! Please RSVP below and let us know what you'd like to bring so we have a little of everything.</p>
+  </section>
+
+  <section class="card" id="rsvp">
+    <form id="form" novalidate>
+      <h2>RSVP</h2>
+      <p class="hint">Let us know if you can make it!</p>
+
+      <label class="field" for="name">Your name</label>
+      <input type="text" id="name" autocomplete="name" maxlength="80" placeholder="First &amp; last name" />
+      <div class="err" id="name-err">Please enter your name.</div>
+
+      <label class="field">Will you be joining us?</label>
+      <div class="rsvp-opts" role="radiogroup">
+        <input type="radio" name="attending" id="a-yes" value="yes" />
+        <label for="a-yes"><span class="e">🥳</span>Yes!</label>
+        <input type="radio" name="attending" id="a-maybe" value="maybe" />
+        <label for="a-maybe"><span class="e">🤔</span>Maybe</label>
+        <input type="radio" name="attending" id="a-no" value="no" />
+        <label for="a-no"><span class="e">😢</span>Can't make it</label>
+      </div>
+      <div class="err" id="att-err">Please choose one.</div>
+
+      <div class="hide-when-no" id="if-coming">
+        <label class="field">How many people total (including you)?</label>
+        <div class="guests">
+          <button type="button" id="minus" aria-label="Fewer people">−</button>
+          <output id="guests">1</output>
+          <button type="button" id="plus" aria-label="More people">+</button>
+        </div>
+
+        <div class="bring">
+          <label class="field" style="margin-top:26px">What are you bringing? <span style="font-weight:400;color:var(--muted)">(pick as many as you like)</span></label>
+          <p class="hint" style="margin:0">Numbers show how many people are already bringing that item.</p>
+          <div id="cats"></div>
+          <div class="cat">
+            <h3>✨ Something Else</h3>
+            <div class="chips">
+              <div class="chip"><input type="checkbox" id="other-cb" /><label for="other-cb">Other</label></div>
+            </div>
+            <div class="other-row" id="other-row">
+              <input type="text" id="other" maxlength="120" placeholder="Tell us what you're bringing" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <label class="field" for="note">Anything else? <span style="font-weight:400;color:var(--muted)">(optional: allergies, questions, etc.)</span></label>
+      <textarea id="note" rows="3" maxlength="500"></textarea>
+
+      <input type="text" id="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <button class="btn" id="submit" type="submit">Send RSVP</button>
+      <div class="form-msg" id="form-msg"></div>
+    </form>
+
+    <div class="thanks" id="thanks">
+      <div class="big" id="thanks-emoji">🦃</div>
+      <h2 id="thanks-title">Thank you!</h2>
+      <p id="thanks-msg">We can't wait to see you!</p>
+      <button class="link-btn" id="edit">Need to change something? Update your RSVP</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Who's Bringing What</h2>
+    <p class="hint">Peek here so we don't end up with five pies (although… is that bad?)</p>
+    <div class="stats" id="stats"></div>
+    <ul class="list" id="list"><li class="empty">Loading…</li></ul>
+  </section>
+
+  <footer>Happy Thanksgiving! 🍁</footer>
+</div>
+
+<script>
+(function () {
+  var SB_URL = 'https://rmpynvmsigwpyhiparqq.supabase.co';
+  var SB_KEY = 'sb_publishable_CrjMrils_yUmV8s_I0QvnA_UzBEbL7f';
+  var EVENT = 'thanksgiving-2026';
+
+  var MENU = [
+    { cat: '🥗 Sides', items: ['Mashed Potatoes', 'Gravy', 'Stuffing', 'Green Bean Casserole', 'Mac & Cheese', 'Sweet Potato Casserole', 'Cranberry Sauce', 'Dinner Rolls', 'Corn Casserole', 'Roasted Vegetables', 'Salad', 'Deviled Eggs'] },
+    { cat: '🧀 Appetizers', items: ['Charcuterie Board', 'Veggie Tray', 'Fruit Platter', 'Chips & Dip', 'Cheese & Crackers'] },
+    { cat: '🥧 Desserts', items: ['Pumpkin Pie', 'Apple Pie', 'Pecan Pie', 'Sweet Potato Pie', 'Cheesecake', 'Banana Pudding', 'Cookies', 'Brownies', 'Whipped Cream / Ice Cream'] },
+    { cat: '🍷 Drinks', items: ['Wine', 'Beer', 'Sparkling Cider', 'Soda', 'Juice', 'Sparkling Water', 'Coffee', 'Ice'] },
+    { cat: '🍽️ Supplies', items: ['Plates & Napkins', 'Cups', 'Utensils', 'To-Go Containers', 'Aluminum Foil'] }
+  ];
+
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $('form'), btn = $('submit'), msg = $('form-msg');
+  var guests = 1;
+  var lastRsvps = [];
+
+  // Build item chips
+  var catsEl = $('cats'), idx = 0;
+  MENU.forEach(function (group) {
+    var wrap = document.createElement('div'); wrap.className = 'cat';
+    var h = document.createElement('h3'); h.textContent = group.cat; wrap.appendChild(h);
+    var chips = document.createElement('div'); chips.className = 'chips';
+    group.items.forEach(function (item) {
+      var id = 'it' + (idx++);
+      var c = document.createElement('div'); c.className = 'chip';
+      var cb = document.createElement('input'); cb.type = 'checkbox'; cb.id = id; cb.value = item; cb.className = 'item';
+      var lb = document.createElement('label'); lb.htmlFor = id;
+      lb.appendChild(document.createTextNode(item));
+      var n = document.createElement('span'); n.className = 'n'; n.dataset.item = item; n.hidden = true; lb.appendChild(n);
+      c.appendChild(cb); c.appendChild(lb); chips.appendChild(c);
+    });
+    wrap.appendChild(chips); catsEl.appendChild(wrap);
+  });
+
+  $('other-cb').addEventListener('change', function () {
+    $('other-row').classList.toggle('show', this.checked);
+    if (this.checked) $('other').focus();
+  });
+
+  function setGuests(n) { guests = Math.max(1, Math.min(20, n)); $('guests').textContent = guests; }
+  $('minus').onclick = function () { setGuests(guests - 1); };
+  $('plus').onclick = function () { setGuests(guests + 1); };
+
+  form.querySelectorAll('input[name=attending]').forEach(function (r) {
+    r.addEventListener('change', function () { $('if-coming').classList.toggle('off', this.value === 'no'); $('att-err').classList.remove('show'); });
+  });
+
+  function api(fn, body) {
+    return fetch(SB_URL + '/rest/v1/rpc/' + fn, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': SB_KEY },
+      body: JSON.stringify(body)
+    }).then(function (r) { return r.json().then(function (j) { if (!r.ok) throw j; return j; }); });
+  }
+
+  // Who's bringing what
+  function loadList() {
+    api('party_signups', { p_event: EVENT })
+      .then(function (rows) { lastRsvps = rows || []; renderList(); })
+      .catch(function () { $('list').innerHTML = '<li class="empty">Couldn\'t load the list right now.</li>'; });
+  }
+
+  function renderList() {
+    var list = $('list'); list.innerHTML = '';
+    var counts = {}, people = 0, yes = 0;
+    lastRsvps.forEach(function (r) {
+      if (r.attending === 'yes') { yes++; people += r.guests || 1; }
+      (r.items || []).forEach(function (i) { counts[i] = (counts[i] || 0) + 1; });
+    });
+    $('stats').innerHTML = '';
+    if (lastRsvps.length) {
+      [[people, 'people coming'], [yes, 'RSVPs yes']].forEach(function (s) {
+        var d = document.createElement('div'); d.className = 'stat';
+        var b = document.createElement('b'); b.textContent = s[0];
+        d.appendChild(b); d.appendChild(document.createTextNode(s[1])); $('stats').appendChild(d);
+      });
+    }
+    document.querySelectorAll('.chip .n').forEach(function (n) {
+      var c = counts[n.dataset.item] || 0; n.hidden = !c; n.textContent = c;
+    });
+    var coming = lastRsvps.filter(function (r) { return r.attending !== 'no'; });
+    if (!coming.length) { list.innerHTML = '<li class="empty">No RSVPs yet. Be the first!</li>'; return; }
+    coming.forEach(function (r) {
+      var li = document.createElement('li');
+      var who = document.createElement('div'); who.className = 'who';
+      who.textContent = r.name + (r.attending === 'maybe' ? ' (maybe)' : '');
+      var meta = document.createElement('div'); meta.className = 'meta';
+      meta.textContent = (r.guests || 1) + (r.guests > 1 ? ' people' : ' person');
+      var items = (r.items || []).slice(); if (r.other) items.push(r.other);
+      var it = document.createElement('div'); it.className = 'items';
+      it.textContent = items.length ? '🍽️ ' + items.join(', ') : 'Not sure yet what they\'re bringing';
+      li.appendChild(who); li.appendChild(meta); li.appendChild(it); list.appendChild(li);
+    });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    msg.classList.remove('show'); msg.style.color = '';
+    var name = $('name').value.trim().replace(/\s+/g, ' ');
+    var att = (form.querySelector('input[name=attending]:checked') || {}).value;
+    var badName = name.length < 2;
+    $('name').classList.toggle('bad', badName); $('name-err').classList.toggle('show', badName);
+    $('att-err').classList.toggle('show', !att);
+    if (badName) { $('name').focus(); return; }
+    if (!att) return;
+    if ($('website').value) return done(att);
+
+    var coming = att !== 'no';
+    var items = coming ? Array.prototype.map.call(form.querySelectorAll('.item:checked'), function (c) { return c.value; }) : [];
+    var other = coming && $('other-cb').checked ? $('other').value.trim() : '';
+
+    btn.disabled = true; btn.textContent = 'Sending…';
+    api('party_rsvp', {
+      p_event: EVENT, p_name: name, p_attending: att,
+      p_guests: coming ? guests : 0, p_items: items, p_other: other, p_note: $('note').value.trim()
+    }).then(function (s) {
+      if (s === 'saved' || s === 'updated') { done(att, s); loadList(); return; }
+      throw new Error(s);
+    }).catch(function () {
+      btn.disabled = false; btn.textContent = 'Send RSVP';
+      msg.textContent = 'Hmm, something went wrong. Please try again in a moment.'; msg.classList.add('show');
+    });
+  });
+
+  function done(att, s) {
+    btn.disabled = false; btn.textContent = 'Send RSVP';
+    if (att === 'no') { $('thanks-emoji').textContent = '💛'; $('thanks-title').textContent = 'We\'ll miss you!'; $('thanks-msg').textContent = 'Thanks for letting us know. Happy Thanksgiving!'; }
+    else if (att === 'maybe') { $('thanks-emoji').textContent = '🍂'; $('thanks-title').textContent = 'Got it, thank you!'; $('thanks-msg').textContent = 'Come back and update your RSVP once you know for sure.'; }
+    else { $('thanks-emoji').textContent = '🦃'; $('thanks-title').textContent = s === 'updated' ? 'RSVP updated!' : 'Thank you! See you there!'; $('thanks-msg').textContent = 'Thursday, Nov 26 at 5 PM. We can\'t wait to see you!'; }
+    form.style.display = 'none'; $('thanks').classList.add('show');
+    $('rsvp').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  $('edit').onclick = function () {
+    $('thanks').classList.remove('show'); form.style.display = '';
+    $('form-msg').textContent = 'Use the same name and we\'ll update your RSVP.'; $('form-msg').style.color = 'var(--muted)'; msg.classList.add('show');
+  };
+
+  loadList();
+})();
+</script>
+</body>
+</html>
