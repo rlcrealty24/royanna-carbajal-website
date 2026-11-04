@@ -183,6 +183,21 @@
   .list .who { font-weight: 600; }
   .list .meta { color: var(--muted); font-size: 14px; }
   .list .items { font-size: 15px; margin-top: 2px; }
+  .list li { display: flex; gap: 12px; align-items: flex-start; }
+  .list li .body { flex: 1; min-width: 0; }
+  .edit-btn {
+    flex: none; font: inherit; font-size: 13px; font-weight: 500; color: var(--burgundy);
+    background: #fff; border: 1.5px solid var(--line); border-radius: 999px;
+    padding: 5px 14px; cursor: pointer; margin-top: 2px;
+  }
+  .edit-btn:hover { border-color: var(--burgundy); }
+  .edit-banner {
+    display: none; background: #fdf1e8; border: 1px solid #f0d2bd; color: var(--burgundy);
+    border-radius: 12px; padding: 10px 14px; font-size: 15px; margin-bottom: 6px;
+    align-items: center; justify-content: space-between; gap: 10px;
+  }
+  .edit-banner.show { display: flex; }
+  input[readonly] { background: var(--soft); color: var(--muted); }
   .stats { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
   .stat { background: var(--soft); border-radius: 12px; padding: 8px 14px; font-size: 14px; }
   .stat b { font-size: 18px; color: var(--burgundy); margin-right: 4px; }
@@ -219,6 +234,7 @@
     <form id="form" novalidate>
       <h2>RSVP</h2>
       <p class="hint">Let us know if you can make it!</p>
+      <div class="edit-banner" id="edit-banner"><span id="edit-label">Editing your RSVP</span><button type="button" class="link-btn" id="cancel-edit">Cancel</button></div>
 
       <label class="field" for="name">Your name</label>
       <input type="text" id="name" autocomplete="name" maxlength="80" placeholder="First &amp; last name" />
@@ -373,6 +389,7 @@
     if (!coming.length) { list.innerHTML = '<li class="empty">No RSVPs yet. Be the first!</li>'; return; }
     coming.forEach(function (r) {
       var li = document.createElement('li');
+      var body = document.createElement('div'); body.className = 'body';
       var who = document.createElement('div'); who.className = 'who';
       who.textContent = r.name + (r.attending === 'maybe' ? ' (maybe)' : '');
       var meta = document.createElement('div'); meta.className = 'meta';
@@ -380,7 +397,11 @@
       var items = (r.items || []).slice(); if (r.other) items.push(r.other);
       var it = document.createElement('div'); it.className = 'items';
       it.textContent = items.length ? '🍽️ ' + items.join(', ') : 'Not sure yet what they\'re bringing';
-      li.appendChild(who); li.appendChild(meta); li.appendChild(it); list.appendChild(li);
+      body.appendChild(who); body.appendChild(meta); body.appendChild(it);
+      var eb = document.createElement('button'); eb.type = 'button'; eb.className = 'edit-btn'; eb.textContent = 'Edit';
+      eb.setAttribute('aria-label', 'Edit ' + r.name + '\'s RSVP');
+      eb.onclick = function () { startEdit(r); };
+      li.appendChild(body); li.appendChild(eb); list.appendChild(li);
     });
   }
 
@@ -405,16 +426,16 @@
       p_event: EVENT, p_name: name, p_attending: att,
       p_guests: coming ? guests : 0, p_items: items, p_other: other, p_note: $('note').value.trim()
     }).then(function (s) {
-      if (s === 'saved' || s === 'updated') { done(att, s); loadList(); return; }
+      if (s === 'saved' || s === 'updated') { lastName = name; var wasEditing = !!editing; stopEdit(); done(att, wasEditing ? 'updated' : s); loadList(); return; }
       throw new Error(s);
     }).catch(function () {
-      btn.disabled = false; btn.textContent = 'Send RSVP';
+      btn.disabled = false; btn.textContent = editing ? 'Save Changes' : 'Send RSVP';
       msg.textContent = 'Hmm, something went wrong. Please try again in a moment.'; msg.classList.add('show');
     });
   });
 
   function done(att, s) {
-    btn.disabled = false; btn.textContent = 'Send RSVP';
+    btn.disabled = false; btn.textContent = editing ? 'Save Changes' : 'Send RSVP';
     if (att === 'no') { $('thanks-emoji').textContent = '💛'; $('thanks-title').textContent = 'We\'ll miss you!'; $('thanks-msg').textContent = 'Thanks for letting us know. Happy Thanksgiving!'; }
     else if (att === 'maybe') { $('thanks-emoji').textContent = '🍂'; $('thanks-title').textContent = 'Got it, thank you!'; $('thanks-msg').textContent = 'Come back and update your RSVP once you know for sure.'; }
     else { $('thanks-emoji').textContent = '🦃'; $('thanks-title').textContent = s === 'updated' ? 'RSVP updated!' : 'Thank you! See you there!'; $('thanks-msg').textContent = 'Thursday, Nov 26 at 5 PM. We can\'t wait to see you!'; }
@@ -422,9 +443,54 @@
     $('rsvp').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  $('edit').onclick = function () {
+  var editing = null, lastName = '';
+
+  function findRsvp(name) {
+    var k = name.trim().toLowerCase();
+    for (var i = 0; i < lastRsvps.length; i++) if (lastRsvps[i].name.toLowerCase() === k) return lastRsvps[i];
+    return null;
+  }
+
+  function startEdit(r) {
+    editing = r.name;
     $('thanks').classList.remove('show'); form.style.display = '';
-    $('form-msg').textContent = 'Use the same name and we\'ll update your RSVP.'; $('form-msg').style.color = 'var(--muted)'; msg.classList.add('show');
+    msg.classList.remove('show');
+    $('name').value = r.name; $('name').readOnly = true;
+    $('name').classList.remove('bad'); $('name-err').classList.remove('show'); $('att-err').classList.remove('show');
+    var radio = form.querySelector('input[name=attending][value="' + r.attending + '"]');
+    if (radio) radio.checked = true;
+    $('if-coming').classList.toggle('off', r.attending === 'no');
+    setGuests(r.guests || 1);
+    var have = {}; (r.items || []).forEach(function (i) { have[i] = true; });
+    var extra = [];
+    form.querySelectorAll('.item').forEach(function (cb) { cb.checked = !!have[cb.value]; delete have[cb.value]; });
+    Object.keys(have).forEach(function (i) { extra.push(i); });
+    if (r.other) extra.push(r.other);
+    $('other-cb').checked = extra.length > 0;
+    $('other-row').classList.toggle('show', extra.length > 0);
+    $('other').value = extra.join(', ');
+    $('note').value = ''; $('note').placeholder = 'Leave blank to keep your earlier note';
+    $('edit-label').textContent = 'Editing ' + r.name.split(' ')[0] + '\'s RSVP';
+    $('edit-banner').classList.add('show');
+    btn.textContent = 'Save Changes';
+    $('rsvp').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function stopEdit() {
+    editing = null;
+    form.reset(); setGuests(1);
+    $('name').readOnly = false; $('note').placeholder = '';
+    $('other-row').classList.remove('show'); $('if-coming').classList.remove('off');
+    $('edit-banner').classList.remove('show'); msg.classList.remove('show');
+    btn.textContent = 'Send RSVP';
+  }
+
+  $('cancel-edit').onclick = stopEdit;
+
+  $('edit').onclick = function () {
+    var r = findRsvp(lastName);
+    if (r) return startEdit(r);
+    $('thanks').classList.remove('show'); form.style.display = '';
   };
 
   loadList();
